@@ -15,7 +15,7 @@
 
 1. **Клонировать репозиторий**:
    ```bash
-   git clone https://https://github.com/John4nderson/weather_project1.git
+   git clone https://github.com/John4nderson/weather_project1.git
    cd weather_project
    ```
 
