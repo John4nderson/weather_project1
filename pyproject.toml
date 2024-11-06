@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "weather-project"
+version = "0.1.0"
+description = "A simple weather service for checking the current weather in selected cities"
+authors = ["Nobody"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^5.1.2"
+djangorestframework = "^3.15.2"
+requests = "^2.32.3"
+psycopg2 = "^2.9.10"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
