@@ -12,11 +12,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
+from decouple import config
 
-load_dotenv()  # Загрузка переменных из .env файла
+# Использование переменной
+API_KEY = config('WEATHER_API_KEY')
 
-WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

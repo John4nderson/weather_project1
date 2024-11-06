@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода в {{ city.name }}</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Погода в {{ city.name }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Дата и время</th>
+                <th>Температура (°C)</th>
+                <th>Описание</th>
+                <th>Скорость ветра (м/с)</th>
+                <th>Влажность (%)</th>
+                <th>Давление (гПа)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for report in weather_reports %}
+                <tr>
+                    <td>{{ report.recorded_at }}</td>
+                    <td>{{ report.temperature }}</td>
+                    <td>{{ report.description }}</td>
+                    <td>{{ report.wind_speed }}</td>
+                    <td>{{ report.humidity }}</td>
+                    <td>{{ report.pressure }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Вернуться на главную</a>
+</body>
+</html>

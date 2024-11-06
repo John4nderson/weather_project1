@@ -1,8 +1,17 @@
-# weather/urls.py
 from django.urls import path
-from .views import WeatherAPIView, index
+from . import views
+from django.contrib import admin
+from django.urls import path, include
+from django.shortcuts import redirect
 
 urlpatterns = [
-    path('', index, name='index'),
-    path('api/weather/<str:city>/', WeatherAPIView.as_view(), name='weather_api'),
+    path('admin/', admin.site.urls),
+    path('weather/', include('weather.urls')),  # Маршрут для weather приложения
+
+    # Новый маршрут для пустого пути
+    path('', lambda request: redirect('weather/')),  # Перенаправление на /weather/
+]
+
+urlpatterns = [
+    path('weather/<str:city_name>/', views.weather_view, name='weather_view'),
 ]
